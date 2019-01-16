@@ -1,0 +1,336 @@
+page {
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.canvas_area {
+  width: 100%;
+  height: 80%;
+  background-color: #fff;
+}
+
+.myCanvas {
+  width: 100%;
+  height: 100%;
+}
+
+.canvas_tools {
+  position: fixed;
+  left: 0;
+  bottom: 5px;
+  width: 100%;
+  height: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(46, 51, 47, 0.1);
+  background: linear-gradient(white, rgb(253, 248, 248));
+}
+
+.canvas_tools_hidden {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.yzb {
+  bottom: -35px;
+  left: 25px;
+  width: 31px;
+  height: 99px;
+  position: absolute;
+}
+
+.sb {
+  bottom: -35px;
+  left: 75px;
+  width: 31px;
+  height: 99px;
+  position: absolute;
+}
+
+.qb {
+  bottom: -35px;
+  left: 125px;
+  width: 31px;
+  height: 99px;
+  position: absolute;
+}
+
+.xp {
+  bottom: -35px;
+  left: 175px;
+  width: 31px;
+  height: 99px;
+  position: absolute;
+}
+
+.box {
+  position: absolute;
+  bottom: -12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border:1px solid rgba(88, 16, 16, 0.507);
+}
+
+.box1 {/*三个颜色选择器*/
+  left: 225px;
+}
+
+.box2 {
+  left: 275px;
+}
+
+.box3 {
+  left: 325px;
+}
+
+/* 激活状态-画图工具 笔 */
+
+.yzb_active {
+  bottom: -15px;
+}
+
+.qb_active {
+  bottom: -15px;
+}
+
+.sb_active {
+  bottom: -15px;
+}
+
+.xb_active {
+  bottom: -15px;
+}
+
+/* 激活状态-画图颜色 选择 */
+
+.actice_box {
+  box-shadow: 0 0 0 4px rgba(0, 23, 34, 0.24);
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/*头部工具*/
+
+.page_top {
+  height: 5%;
+  width: 100%;
+}
+
+.window_view {
+  /*第一层view*/
+  width: 100%;
+  height: 5%;
+  display: flex;
+  flex-direction: row; /*显示为一行 column显示为多行*/
+}
+
+/*顶部菜单栏样式*/
+
+.saveBtn {
+  background: none !important;
+  color: #000 !important;
+  border: none;
+  height: 32px;
+  width: 32px;
+  padding: 0 0px;
+  position: absolute;
+}
+
+/*顶部画笔粗细调节器*/
+
+.left {
+  position: absolute;
+  width: 150px;
+  left: 55px;
+}
+
+button::after {
+  border: none;
+}
+
+.menu {
+  left: 10px;
+  top: 0px;
+}
+
+.menu1 {
+  left: 10px;
+  top: 0px;
+}
+
+.menu2 {
+  left: 55px;
+  top: 0px;
+}
+
+.menu3 {
+  left: 100px;
+  top: 0px;
+}
+
+.btn1 {
+  right: 10px;
+  top: 0px;
+}
+
+.btn3 {
+  right: 45px;
+  bottom: 50px;
+}
+
+.btn4 {
+  right: 10px;
+  bottom: 50px;
+}
+
+.image {
+  width: 32px;
+  height: 32px;
+}
+
+.image_color {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  bottom: 50px;
+}
+
+.colorimg {
+  position: absolute;
+  left: 225px;
+  top: 7.5px;
+}
+
+.palette {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+.paletteImage {
+  align-items: right;
+  margin-right: 7.5px;
+  width: 48px;
+  height: 48px;
+}
+
+/*头部侧边菜单栏*/
+
+.c-state1 {
+  transform: rotate(0deg) scale(1) translate(75%, 0%);
+  -webkit-transform: rotate(0deg) scale(1) translate(75%, 0%);
+}
+
+.c-state2 {
+  transform: rotate(0deg) scale(0.8) translate(75%, 0%);
+  -webkit-transform: rotate(0deg) scale(0.8) translate(75%, 0%);
+}
+
+.slide-menu {
+  background-color: rgb(227, 227, 255);
+  top: 50px;
+  position: absolute;
+}
+
+#box {
+  position: absolute;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  overflow: hidden;
+  height: 15%;
+  animation-fill-mode: forwards;
+  left: 45px;
+}
+
+#item_list {
+  background-color: white;
+  width: 100%;
+  height: 15%;
+  left: 45px;
+}
+
+@keyframes slidedown {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 400rpx;
+  }
+}
+
+@keyframes slideup {
+  from {
+    width: 400rpx;
+  }
+
+  to {
+    width: 0;
+  }
+}
+
+.open {
+  animation: slidedown 1s;
+}
+
+.close {
+  animation: slideup 1s;
+} 
+.RGBA_view{
+  display: flex;
+  flex-direction:row; /* 容器下按钮横向或纵向排列 */
+  align-items:center; /* 容器下按钮的对齐方式 */
+}
+.RGBA{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border:1px solid rgba(88, 16, 16, 0.507);
+}
+.R{
+  margin-top: 125px;
+  margin-left: 10px;
+}
+.G{
+  margin-top: 125px;
+  margin-left: 10px;
+}
+.B{
+  margin-top: 125px;
+  margin-left: 10px;
+}
+.slider_rgba{
+  position: absolute;
+  width: 255px;
+  align-content: center;
+}
+.slider_rgba1{
+  top: 45px
+}
+.slider_rgba2{
+  top: 75px;
+}
+.slider_rgba3{
+  top: 105px;
+}
+.slider_rgba4{
+  top: 135px;
+}

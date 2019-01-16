@@ -1,0 +1,5 @@
+<view class='site__header'>
+  <view class='tada animated' hover-class='hinge' hover-stay-time='2000' style='font-size:50px;color:#f35626'  >doodle</view>
+  <button class='goodbutton'  hover-class="hover" bindtap="after" >It's show time.</button>
+</view>
+

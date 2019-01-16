@@ -1,0 +1,3 @@
+/**app.wxss**/
+@import '/utils/animate.wxss';
+@import 'pages/mine/mine.wxss';

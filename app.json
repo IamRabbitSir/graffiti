@@ -1,0 +1,66 @@
+{
+  "debug": true,
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/draw/draw",
+    "pages/mine/mine",
+    "pages/test/test"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#1FDA9A",
+    "navigationBarTitleText": "手绘",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "tabBar": {
+    "color": "#9E9E9E",
+    "selectedColor": "#f00",
+    "backgroundColor": "#fff",
+    "borderStyle": "#ccc",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "images/n1.png",
+        "selectedIconPath": "images/n1.png",
+        "pageTum": "redirect",
+        "selectedColor": "#4EDF80",
+        "active": true
+      },
+      {
+        "pagePath": "pages/draw/draw",
+        "text": "手绘",
+        "iconPath": "images/n2.png",
+        "selectedIconPath": "images/n2.png",
+        "pageTum": "navigate",
+        "selectedColor": "#4EDF80",
+        "active": false
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "帮助",
+        "iconPath": "images/n3.png",
+        "selectedIconPath": "images/n3.png",
+        "pageTum": "redirect",
+        "selectedColor": "#4EDF80",
+        "active": false
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "参考",
+        "iconPath": "images/n4.png",
+        "selectedIconPath": "images/n4.png",
+        "pageTum": "redirect",
+        "selectedColor": "#4EDF80",
+        "active": false
+      }
+    ],
+    "position": "bottom"
+  }
+}

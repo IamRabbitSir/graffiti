@@ -1,0 +1,44 @@
+<view>
+<view class="zhezao" hidden="{{flag}}">
+  <view class="t_w">
+ 
+    <!--右上角图标开始-->
+    <view class="t_image"  bindtap="conceal">
+      <image class="t_image1" src="/images/close.png" ></image>
+    </view>
+    <!--右上角图标结束-->
+ 
+    <!--弹出框开始-->
+    <view class="tanchu_view">
+      <view>
+        <view class="bg_view">需要什么帮助</view>
+        <view class="txtys">Can I help you？</view>
+         <!--确定开始-->
+        <view class="txtsure"  >
+          <view class="txtsurebg" bindtap="conceal">
+              <text class="txtsurename">确定</text>
+          </view>        
+        </view>
+         <!--确定结束-->
+       </view>
+    </view>
+    <!--弹出框结束-->
+  </view>
+</view>
+</view>
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+
+   <view class='choseQuestion' >
+
+    {{choseQuestionBank}}
+
+   </view>
+
+</picker> 
+<view bindtap="show">寻求帮助</view>
+<view bindtap="indicateTap">转发指南</view>
+
+<cover-view  class='indicate {{indicate?"show_indicate":"hide_indicate"}}' bindtap='outdicateTap'>
+<cover-image class='indicate-img' src='/images/jt.png'></cover-image>
+<cover-view class='indicate-text'>点击右上角“...”可以转发哦！</cover-view>
+</cover-view>
