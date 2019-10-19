@@ -28,7 +28,6 @@ Page({
     hidden_slider: false,
     state: false,
     first_click: false,
-    hidden_canvas:false,
     
     //颜色
     hiddenmodalput: true,
@@ -86,7 +85,7 @@ Page({
          this.context.setLineWidth(this.data.pen)
           //var a = this.context.arc(this.startX, this.startY, 5, 0, 2 * Math.PI, true);
          this.context.beginPath()   
-        console.log(this.data.color);
+        //console.log(this.data.color);
       }
   },
   //手指触摸后移动
@@ -176,9 +175,9 @@ Page({
   },
   changeColorOne: function () {
     var that= this;
-    //var rgba1 = 'rgba(' + that.data.x1 + ',' + that.data.y1 + ',' + that.data.z1 + ',' + that.data.r1+')';
     that.setData({
       //rgba1: rgba1,
+      select:1,
       color: that.data.rgba1,
       active_box1: true,
       active_box2: false,
@@ -187,10 +186,9 @@ Page({
   },
   changeColorTwo: function () {
     var that = this; 
-    
-    //var rgba2 = 'rgba(' + that.data.x2 + ',' + that.data.y2 + ',' + that.data.z2 + ',' + that.data.r2 + ')';
     that.setData({
       //rgba2: rgba2,
+      select: 2,
       color: that.data.rgba2,
       active_box1: false,
       active_box2: true,
@@ -199,10 +197,9 @@ Page({
   },
   changeColorThree: function () {
     var that = this; 
-    
-    //var rgba3 = 'rgba(' + that.data.x3 + ',' + that.data.y3 + ',' + that.data.z3 + ',' + that.data.r3 + ')';
     that.setData({
       //rgba3: rgba3,
+      select: 3,
       color: that.data.rgba3,
       active_box1: false,
       active_box2: false,
@@ -393,8 +390,7 @@ Page({
   //调色板
   showM: function (e) {//显示调色板
     this.setData({
-      hiddenmodalput: false,
-      hidden_canvas: true,
+      hiddenmodalput: false
     })
   },
   confirmM:function(e){//调取调色板modal，点'提交'
@@ -413,24 +409,16 @@ Page({
       })
     };
     that.setData({   
-      css_R:'background-color:'+this.data.rgba1+';',
+      css_R:'background-color:'+ this.data.rgba1+';',
       css_G: 'background-color:' + this.data.rgba2 + ';',
       css_B: 'background-color:' + this.data.rgba3 + ';',
-      hidden_canvas:false
-    })
-    that.cancelM();
-  },
-  cancelM: function (e) {//取消
-    this.setData({
-      hiddenmodalput: true,
-      hidden_canvas: false
+      hiddenmodalput: true
     })
   },
+
   rgba1Change: function (e) {//silder改变x的值
     var that = this;
-    var value = e.detail.value;
-    console.log(value);
-    
+    var value = e.detail.value;  
       that.setData({
         x: value,
       })
@@ -440,7 +428,6 @@ Page({
   rgba2Change: function (e) {//silder改变y的值
     var that = this;
     var value = e.detail.value;
-    console.log(value);
     that.setData({
       y: value,
       
@@ -450,7 +437,6 @@ Page({
   rgba3Change: function (e) {//silder改变z的值
     var that = this;
     var value = e.detail.value;
-    console.log(value);
     that.setData({
       z: value,
     })
@@ -459,7 +445,6 @@ Page({
   rgba4Change: function (e) {//silder改变r的值
     var that = this;
     var value = e.detail.value;
-    console.log(value);
     that.setData({
       r: value,
     })
@@ -468,8 +453,9 @@ Page({
   
   rgbaChange:function(e){
     var that = this;
+    console.log(that.data.select);
     var rgba = 'rgba(' + that.data.x + ',' + that.data.y + ',' + that.data.z + ',' + that.data.r + ')';
-    if(that.data.select==2){
+    if(that.data.select == 2){
       this.setData({
         rgba2: rgba,
       })
@@ -493,8 +479,6 @@ Page({
     var y = parseInt(arr[1])
     var z = parseInt(arr[2])
     var r = parseFloat(arr[3])
-    
-    console.log(x+' '+y+' '+z+' '+r)
     that.setData({
       select: 1,
       x:x,
@@ -502,8 +486,6 @@ Page({
       z:z,
       r:r,
     })
-    console.log(that.data.rgba1 + ' ' + that.data.rgba2 + ' ' + that.data.rgba3);
-    
     that.changeColorOne();
   },
   G: function (e) {
@@ -520,8 +502,6 @@ Page({
       z: z,
       r: r,
     })
-    console.log(x+' '+y+' '+z+' '+r)
-    console.log(that.data.rgba1 + ' ' + that.data.rgba2 + ' ' + that.data.rgba3);
     that.changeColorTwo();
   },
   B: function (e) {
@@ -538,17 +518,8 @@ Page({
       z: z,
       r: r,
     })
-    console.log(x + ' ' + y + ' ' + z + ' ' + r)
-    console.log(that.data.rgba1 + ' ' + that.data.rgba2 + ' ' + that.data.rgba3);
     that.changeColorThree();
   },
-
-
-
-
-
-
-
 
 
   /**
@@ -576,7 +547,5 @@ Page({
 
   },
 
-  a:function(e){
-    console.log(this.data.color);
-  }
+  
 })

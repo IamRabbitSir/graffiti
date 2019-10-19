@@ -28,7 +28,7 @@
     </view>
 
     <!--画布区域-->
-    <view class="canvas_area" hidden='{{hidden_canvas}}'>
+    <view class="canvas_area">
         <!--注意：同一页面中的 canvas-id 不可重复，如果使用一个已经出现过的 canvas-id，该 canvas 标签对应的画布将被隐藏并不再正常工作-->
         <canvas canvas-id="myCanvas" class="myCanvas" graph="{{graph}} 
             disable-scroll="false"
@@ -61,7 +61,7 @@
     </cover-view>
     
     <!--调色板-->
-    <modal hidden="{{hiddenmodalput}}" title="调色板" confirm-text="提交" cancel-text="取消" bindconfirm='confirmM' bindcancel="cancelM">
+    <modal hidden="{{hiddenmodalput}}" title="调色板" confirm-text="提交" no-cancel='true' cancel-text="取消" bindconfirm='confirmM'>
       <view class='RGBA_view'>
       <slider class='slider_rgba slider_rgba1' block-color='orange' show-value='true' bindchange="rgba1Change" min='0' max='255' step='1' value='{{x}}' activeColor='rgb(243,242,247)' backgroundColor='rgb(243,242,247)' block-size='14' />
       <slider class='slider_rgba slider_rgba2' block-color='orange' show-value='true' bindchange="rgba2Change" min='0' max='255' step='1' value='{{y}}' activeColor='rgb(243,242,247)' backgroundColor='rgb(243,242,247)' block-size='14' />

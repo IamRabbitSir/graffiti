@@ -22,7 +22,7 @@
     "color": "#9E9E9E",
     "selectedColor": "#f00",
     "backgroundColor": "#fff",
-    "borderStyle": "#ccc",
+    "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -62,5 +62,6 @@
       }
     ],
     "position": "bottom"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

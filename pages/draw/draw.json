@@ -4,5 +4,7 @@
     "backgroundTextStyle": "dark",
     "usingComponents": {
       "myCanvas": "/components/canvas-drag/index"
-    }
+    },
+    "enablePullDownRefresh": false
+    
 }
